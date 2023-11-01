@@ -1,0 +1,29 @@
+//
+// Buttons
+//
+
+@each $color, $value in $theme-colors {
+    .btn-soft-#{$color} {
+        background-color: rgba($value, .1);
+        color: $value;
+
+        &:hover,
+        &:focus {
+            background-color: $value;
+            color: color-contrast($value);
+        }
+    }
+}
+
+.no-focus {
+    &:focus {
+        box-shadow: none !important;
+    }
+}
+
+.btn-link {
+    &:active,
+    &.active {
+        color: $link-hover-color;
+    }
+}

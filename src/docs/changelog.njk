@@ -1,0 +1,233 @@
+<!-- changelog.njk -->
+{% extends "layouts/_layout.njk" %}
+{% set title = "Changelog" %}
+
+{% block content %}
+    <div class="container-fluid py-0">
+        <div class="row">
+            {% include "partials/_sidebar.njk" %}
+
+            <div class="col-12 col-lg-6 col-xl-8 offset-lg-3 offset-xl-2">
+                <div class="row">
+                    <div class="col py-5 docs-text">
+                        <h1 class="h2">{{ title }}</h1>
+                        <hr>
+                        
+                        <section class="py-5">
+                            <p class="d-flex align-items-center"><span class="badge rounded-pill text-bg-secondary py-1 me-1">v2.0.0</span> - Jan 24, 2023</p>
+                            
+                            <div class="alert alert-danger small mt-5 mb-4">
+                                <p class="mb-1">Please follow the steps on the <a href="https://getbootstrap.com/docs/5.2/migration/" class="text-white text-decoration-underline" target="_blank">official Bootstrap migration</a> link and make sure you make a copy of your files before you start the upgrade process.</p>
+                                <p class="mb-0">Compare the new package files with your existing ones and replace what's necessary.</p>
+                            </div>
+                            
+                            <ul class="mb-4">
+                                <li>Update: bootstrap from <code>v4.5.2</code> to <code>v5.2.3</code></li>
+                                <li>Update: Utilities: <code>opacity</code> (new negative values), <code>text-decoration-underline</code> class from <code>text-underline</code></li>
+                                <li>Update: @babel-core from <code>v7.11.1</code> to <code>v7.20.12</code></li>
+                                <li>Update: @babel/preset-env from <code>v7.3.1</code> to <code>v7.20.2</code></li>
+                                <li>Update: acorn from <code>v7.11.0</code> to <code>v8.8.0</code></li>
+                                <li>Update: browser-sync from <code>v2.26.10</code> to <code>v2.27.11</code></li>
+                                <li>Update: browser-sync-webpack-plugin from <code>v2.2.2</code> to <code>v2.3.0</code></li>
+                                <li>Update: core-js from <code>v3.6.5</code> to <code>v3.27.1</code></li>
+                                <li>Update: cross-env from <code>v7.0.2</code> to <code>v7.0.3</code></li>
+                                <li>Update: del from <code>v5.0.1</code> to <code>v6.0.1</code></li>
+                                <li>Update: gulp-postcss from <code>v8.0.0</code> to <code>v9.0.1</code></li>
+                                <li>Update: gulp-sass from <code>v4.1.0</code> to <code>v5.1.0</code></li>
+                                <li>Update: gulp-scss from <code>v1.4.0</code> to <code>v1.1.2</code></li>
+                                <li>Update: gulp-sourcemaps from <code>v2.6.5</code> to <code>v3.0.0</code></li>
+                                <li>Update: gulp-uglify-es from <code>v2.0.0</code> to <code>v3.0.0</code></li>
+                                <li>Update: i from <code>v0.3.6</code> to <code>v0.3.7</code></li>
+                                <li>Update: laravel-mix from <code>v5.0.5</code> to <code>v6.0.49</code></li>
+                                <li>Update: laravel-mix-copy-watched from <code>v2.2.4</code> to <code>v3.0.0</code></li>
+                                <li>Update: laravel-mix-nunjucks from <code>github:levipadre/laravel-mix-nunjucks</code> to <code>v1.2.4</code></li>
+                                <li>Update: minify-html-webpack-plugin from <code>v1.1.3</code> to <code>1.1.7</code></li>
+                                <li>Update: minimist from <code>v1.2.5</code> to <code>1.2.7</code></li>
+                                <li>Update: postcss-css-variables from <code>v0.17.0</code> to <code>0.18.0</code></li>
+                                <li>Update: postcss-flexbugs-fixes from <code>v4.2.1</code> to <code>5.0.2</code></li>
+                                <li>Update: remove-files-webpack-plugin from <code>v1.4.3</code> to <code>1.5.0</code></li>
+                                <li>Update: sass from <code>v1.26.10</code> to <code>v1.57.1</code></li>
+                                <li>Update: sass-loader from <code>v9.0.2</code> to <code>v13.2.0</code></li>
+                                <li>Update: vue-template-compiler from <code>v2.6.11</code> to <code>v12.7.14</code></li>
+                                <li>Update: countup.js from <code>v1.9.3</code> to <code>v2.3.2</code></li>
+                                <li>Update: jarallax from <code>v2.0.4</code> to <code>v2.1.3</code></li>
+                                <li>Update: dropped jQuery</li>
+                                <li>Update: HTML minification is disabled by default</li>
+                                <li>Update: build tool commands from <code>npm run prod</code> to <code>npm run build</code> and <code>gulp prod</code> to <code>gulp build</code></li>
+                                <li>Update: dropped <code>.card-columns</code> in favor of Masonry</li>
+                                <li>Update: dropped plugins: <code>bluebird</code>, <code>number.isnanv</code>, <code>string-includes-polyfill</code>, <code>whatwg-fetch</code></li>
+                            </ul>
+                            <p class="mb-2 fw-semibold">Updated files:</p>
+                            <ul>
+                                <li><code>.browserslistrc</code></li>
+                                <li><code>data.json</code></li>
+                                <li><code>gulpfile.js</code></li>
+                                <li><code>package.json</code></li>
+                                <li><code>webpack.mix.js</code></li>
+                                <li><code>src/js/theme.js</code></li>
+                                <li><code>src/scss/theme.scss</code></li>
+                                <li><code>src/scss/square/_bootstrap.scss</code></li>
+                                <li><code>src/scss/square/_components.scss</code></li>
+                                <li><code>src/scss/square/_mixins.scss</code></li>
+                                <li><code>src/scss/square/_utilities.scss</code></li>
+                                <li><code>src/scss/square/_variables.scss</code></li>
+                                <li><code>src/scss/square/components/_badge.scss</code></li>
+                                <li><code>src/scss/square/components/_buttons.scss</code></li>
+                                <li><code>src/scss/square/components/_images.scss</code></li>
+                                <li><code>src/scss/square/components/_navbar.scss</code></li>
+                                <li><code>src/scss/square/components/_skip-to-main.scss</code></li>
+                                <li><code>src/scss/square/mixins/_container.scss</code></li>
+                                <li><code>src/scss/square/utilities/_animation.scss</code></li>
+                                <li><code>src/scss/square/utilities/_background.scss</code></li>
+                                <li><code>src/scss/square/utilities/_overlay.scss</code></li>
+                                <li><code>src/scss/square/utilities/_position.scss</code></li>
+                                <li><code>src/scss/square/utilities/_text.scss</code></li>
+                                <li><code>src/scss/square/vendor/cookieconsent/_cookieconsent.scss</code></li>
+                                <li><code>src/scss/square/vendor/swiper/swiper.scss</code></li>
+                                <li><code>src/templates/404.njk</code></li>
+                                <li><code>src/templates/about.njk</code></li>
+                                <li><code>src/templates/account-profile.njk</code></li>
+                                <li><code>src/templates/app.njk</code></li>
+                                <li><code>src/templates/blog-single.njk</code></li>
+                                <li><code>src/templates/blog.njk</code></li>
+                                <li><code>src/templates/careers-single.njk</code></li>
+                                <li><code>src/templates/careers.njk</code></li>
+                                <li><code>src/templates/case-study.njk</code></li>
+                                <li><code>src/templates/coming-soon.njk</code></li>
+                                <li><code>src/templates/contact.njk</code></li>
+                                <li><code>src/templates/event.njk</code></li>
+                                <li><code>src/templates/faqs.njk</code></li>
+                                <li><code>src/templates/index.njk</code></li>
+                                <li><code>src/templates/legal.njk</code></li>
+                                <li><code>src/templates/password-reset.njk</code></li>
+                                <li><code>src/templates/photography.njk</code></li>
+                                <li><code>src/templates/portfolio.njk</code></li>
+                                <li><code>src/templates/presentation.njk</code></li>
+                                <li><code>src/templates/pricing.njk</code></li>
+                                <li><code>src/templates/saas.njk</code></li>
+                                <li><code>src/templates/services.njk</code></li>
+                                <li><code>src/templates/sign-in.njk</code></li>
+                                <li><code>src/templates/sign-up.njk</code></li>
+                                <li><code>src/templates/team.njk</code></li>
+                                <li><code>src/templates/layouts/_footer.njk</code></li>
+                                <li><code>src/templates/layouts/_header.njk</code></li>
+                                <li><code>src/templates/partials/_ad-alert.njk</code></li>
+                                <li><code>src/templates/partials/_photoswipe.njk</code></li>
+                                <li><code>src/templates/partials/_skip-main.njk</code></li>
+                                <li>all documentation files</li>
+                            </ul>
+                            <p class="mb-2 fw-semibold">New files:</p>
+                            <ul class="mb-6">
+                                <li><code>src/images/photos/photo-95.jpeg</code></li>
+                                <li><code>src/images/photos/photo-96.jpeg</code></li>
+                            </ul>
+                            <p class="mb-2 fw-semibold">Removed files:</p>
+                            <ul class="mb-6">
+                                <li><code>src/scss/square/components/_nav.scss</code></li>
+                                <li><code>src/scss/square/components/_type.scss</code></li>
+                                <li><code>src/scss/square/mixins/_hover.scss</code></li>
+                                <li><code>src/scss/square/utilities/_border.scss</code></li>
+                                <li><code>src/scss/square/utilities/_opacity.scss</code></li>
+                                <li><code>src/scss/square/utilities/_sizing.scss</code></li>
+                                <li><code>src/scss/square/utilities/_z-index.scss</code></li>
+                            </ul>
+
+
+                            <p class="d-flex align-items-center"><span class="badge rounded-pill text-bg-secondary py-1 me-1">v1.0.2</span> - Nov 24, 2020</p>
+                            <ul class="mb-4">
+                                <li>New: Shifted image running outside container (with edge)</li>
+                                <li>Update: slightly redesigned Overview page</li>
+                                <li>Update: update third party assets paths to support folder structure</li>
+                                <li>Update: update Laravel-mix from <code>v5.0.4</code> to <code>v5.0.5</code></li>
+                                <li>Fix: picture's source type from png to jpg when the images are jpg</li>
+                            </ul>
+                            <p class="mb-2 fw-semibold">Updated files:</p>
+                            <ul>
+                                <li><code>data.json</code></li>
+                                <li><code>package.json</code></li>
+                                <li><code>src/js/theme.js</code></li>
+                                <li><code>src/templates/about.njk</code></li>
+                                <li><code>src/templates/app.njk</code></li>
+                                <li><code>src/templates/blog-single.njk</code></li>
+                                <li><code>src/templates/blog.njk</code></li>
+                                <li><code>src/templates/careers-single.njk</code></li>
+                                <li><code>src/templates/careers.njk</code></li>
+                                <li><code>src/templates/case-study.njk</code></li>
+                                <li><code>src/templates/event.njk</code></li>
+                                <li><code>src/templates/index.njk</code></li>
+                                <li><code>src/templates/photography.njk</code></li>
+                                <li><code>src/templates/portfolio.njk</code></li>
+                                <li><code>src/templates/presentation.njk</code></li>
+                                <li><code>src/templates/sass.njk</code></li>
+                                <li><code>src/templates/services.njk</code></li>
+                                <li><code>src/templates/team.njk</code></li>
+                                <li><code>src/scss/square/mixins/_container.scss</code></li>
+                                <li><code>src/scss/square/utilities/_image.scss</code></li>
+                                <li><code>src/docs/changelog.njk</code></li>
+                                <li><code>src/docs/credit-images.njk</code></li>
+                                <li><code>src/docs/partials/_sidebar.njk</code></li>
+                            </ul>
+                            <p class="mb-2 fw-semibold">New files:</p>
+                            <ul class="mb-6">
+                                <li><code>src/images/photos/photo-94.jpg</code></li>
+                                <li><code>src/images/photos/photo-94.webp</code></li>
+                            </ul>
+                            
+                            <p class="d-flex align-items-center"><span class="badge rounded-pill text-bg-secondary py-1 me-1">v1.0.1</span> - Sept 1, 2020</p>
+                            <ul class="mb-4">
+                                <li>New: add thumbnail version of slider (changes in HTML)</li>
+                                <li>Update: slightly redesigned Overview page</li>
+                                <li>Update: rewrite menu paths to support submenu</li>
+                                <li>Update: remove unnecessary empty script end style from documentation pages</li>
+                                <li>Update: improved documentation for thumbnail slider</li>
+                                <li>Update: improved documentation for SVG</li>
+                                <li>Update: improved documentation for dismissing alerts</li>
+                                <li>Update: improved documentation for build tools</li>
+                            </ul>
+                            <p class="mb-2 fw-semibold">Updated files:</p>
+                            <ul>
+                                <li><code>data.json</code></li>
+                                <li><code>src/js/theme.js</code></li>
+                                <li><code>src/scss/square/vendor/swiper/swiper.scss</code></li>
+                                <li><code>src/templates/about.njk</code></li>
+                                <li><code>src/templates/app.njk</code></li>
+                                <li><code>src/templates/blog-single.njk</code></li>
+                                <li><code>src/templates/careers.njk</code></li>
+                                <li><code>src/templates/case-study.njk</code></li>
+                                <li><code>src/templates/event.njk</code></li>
+                                <li><code>src/templates/index.njk</code></li>
+                                <li><code>src/templates/photography.njk</code></li>
+                                <li><code>src/templates/presentation.njk</code></li>
+                                <li><code>src/templates/sign-up.njk</code></li>
+                                <li><code>src/templates/team.njk</code></li>
+                                <li><code>src/templates/layouts/_header.njk</code></li>
+                                <li><code>src/docs/layouts/_layout.njk</code></li>
+                                <li><code>src/docs/alerts.njk</code></li>
+                                <li><code>src/docs/build-tools.njk</code></li>
+                                <li><code>src/docs/slider.njk</code></li>
+                                <li><code>src/docs/svg.njk</code></li>
+                                <li><code>src/docs/partials/_sidebar.njk</code></li>
+                                <li><code>src/docs/changelog.njk</code></li>
+                                <li><code>src/docs/credit-images.njk</code></li>
+                            </ul>
+                            <p class="mb-2 fw-semibold">New files:</p>
+                            <ul class="mb-6">
+                                <li><code>src/images/photos/photo-93.jpg</code></li>
+                                <li><code>src/images/photos/photo-93.webp</code></li>
+                            </ul>
+
+                            <p class="d-flex align-items-center"><span class="badge rounded-pill text-bg-secondary py-1 me-1">v1.0.0</span> - Aug 12, 2020</p>
+                            <ul>
+                                <li>Initial release of Square. Lots more coming soon!</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-3 col-xl-2 sidebar sidebar-right py-6 d-none d-lg-block">
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+//
+// Badge
+//
+
+@each $color, $value in $theme-colors {
+    .badge-soft-#{$color} {
+        background-color: rgba($value, .1);
+        color: $value;
+
+        @at-root {
+            a#{&} {
+                &:hover,
+                &:focus {
+                    background-color: $value;
+                    color: color-contrast($value);
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &:active {
+            background-color: $value;
+            color: color-contrast($value);
+        }
+    }
+}

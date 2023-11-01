@@ -1,0 +1,26 @@
+//
+// Text
+//
+
+.font-italic,
+em {
+    font-variation-settings: "slnt" 10;
+}
+
+.drop-caps {
+    p {
+        &:first-of-type::first-letter {
+            font-size: $font-size-base * 3.1;
+            font-weight: 900;
+            line-height: calc($line-height-base / 2);
+            float: left;
+            padding: 9px 5px 0 0;
+        }
+
+        &.lead {
+            &:first-of-type::first-letter {
+                font-size: $lead-font-size * 3.05;
+            }
+        }
+    }
+}
