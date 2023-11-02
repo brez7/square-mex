@@ -25,7 +25,8 @@
         "watch": "mix watch",
         "hot": "mix watch --hot",
         "build": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "deploy": "gulp build && firebase deploy"
     },
     "author": "Webinning Ltd. (https://webinning.co.uk)",
     "license": "ISC",

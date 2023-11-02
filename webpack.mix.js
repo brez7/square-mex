@@ -27,7 +27,8 @@ mix
             '**/*.njk',
             '**/*.html',
             '**/*.js',
-            '**/*.css'
+            '**/*.css',
+            '**/*.json'
         ]
     })
     // Render Nunjucks templates
