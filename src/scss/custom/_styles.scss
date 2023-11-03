@@ -3,11 +3,22 @@
  * It will be merged with the default style.
  */
 
- [data-typed] {
-    color: rgb(255, 0, 0);
-    
-  }
+[data-typed] {
+  color: rgb(255, 0, 0);
 
- .button-secondary  {color:black !important;}
+}
 
- 
+.btn-secondary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #000000;
+  --bs-btn-border-color: #ff0037;
+}
+
+h1 {
+  line-height: 1.2;
+}
+
+.display-2 {
+  font-weight: 900;
+  line-height: 1.2;
+}
