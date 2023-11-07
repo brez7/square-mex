@@ -22,3 +22,8 @@ h1 {
   font-weight: 900;
   line-height: 1.2;
 }
+
+.card-text:last-child {
+  margin-bottom: 0;
+  text-align: center;
+}
