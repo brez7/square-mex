@@ -27,3 +27,64 @@ h1 {
   margin-bottom: 0;
   text-align: center;
 }
+/* Gallery Grid Styles */
+ 
+/* Custom CSS */
+.custom-margin-top {
+  margin-top: 200px;
+}
+
+/* Align images to the top of each column */
+.col-md-3 img {
+  vertical-align: top;
+}
+
+/* Apply rounded corners to images */
+.custom-rounded {
+  border-radius: 8px; /* Adjust the radius value as needed */
+}
+ 
+.image-caption {font-weight: bold; text-align:center;padding-top:10px;}
+
+
+.linked {
+  text-decoration: none;
+  color: inherit; /* This ensures that the link color remains unchanged */
+}
+
+.linked:visited,
+.linked:focus
+ {
+  text-decoration: none; /* Remove underline for visited and focused links */
+  color: inherit; /* This ensures that the link color remains unchanged */
+}
+
+.linked:hover {color:red; text-decoration: none;}
+/* Custom CSS for zoom effect */
+.image-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.image-container img {
+  transition: transform 0.3s; /* Add a smooth transition */
+}
+
+.image-container:hover img {
+  transform: scale(1.1); /* Zoom in by 10% on hover */
+}
+.red-border {
+  border: 5px solid black;
+}
+.red-border:hover {
+  border: 2px solid red;
+}
+.custom-rounded {
+  border-radius: 20px; /* Adjust the radius value as needed */
+}
+
+// .bg-primary {
+//       background-image: url('assets/images/photos/breakfast/breakfast-main.webp');
+// }
+
+ 
