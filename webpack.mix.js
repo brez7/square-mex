@@ -161,3 +161,28 @@ if (mix.inProduction()) {
         // For documentation
         .sass(paths.src.scss + '/docs.scss', paths.temp.docs + "/assets/css/docs.css");
 }
+
+// webpack.config.js
+const path = require('path');
+
+module.exports = {
+    entry: './src/js/index.js',
+    output: {
+        path: path.resolve(__dirname, 'public/js'),
+        filename: 'bundle.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            }
+        ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
+    }
+};

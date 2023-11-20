@@ -1,32 +1,32 @@
 'use strict';
 
 // Gulp task variables
-let paths =             require('./paths'),
-    autoprefixer =      require('gulp-autoprefixer'),
-    browserSync =       require('browser-sync').create(),
-    cleanCss =          require('gulp-clean-css'),
-    del =               require('del'),
-    gulp =              require('gulp'),
-    concat =            require('gulp-concat'),
-    postcss =           require('gulp-postcss'),
-    plumber =           require('gulp-plumber'),
-    sass =              require('gulp-sass')(require('sass')),
-    sourcemaps =        require('gulp-sourcemaps'),
-    uglify =            require('gulp-uglify-es').default,
-    babel =             require('gulp-babel'),
-    rename =            require('gulp-rename'),
-    wait =              require('gulp-wait'),
-    extend =            require('extend'),
-    parseArgs =         require('minimist'),
-    nunjucksRender =    require('gulp-nunjucks-render'),
-    data =              require('gulp-data'),
-    gulpif =            require('gulp-if'),
-    htmlmin =           require('gulp-htmlmin');
- 
+let paths = require('./paths'),
+    autoprefixer = require('gulp-autoprefixer'),
+    browserSync = require('browser-sync').create(),
+    cleanCss = require('gulp-clean-css'),
+    del = require('del'),
+    gulp = require('gulp'),
+    concat = require('gulp-concat'),
+    postcss = require('gulp-postcss'),
+    plumber = require('gulp-plumber'),
+    sass = require('gulp-sass')(require('sass')),
+    sourcemaps = require('gulp-sourcemaps'),
+    uglify = require('gulp-uglify-es').default,
+    babel = require('gulp-babel'),
+    rename = require('gulp-rename'),
+    wait = require('gulp-wait'),
+    extend = require('extend'),
+    parseArgs = require('minimist'),
+    nunjucksRender = require('gulp-nunjucks-render'),
+    data = require('gulp-data'),
+    gulpif = require('gulp-if'),
+    htmlmin = require('gulp-htmlmin');
+
 
 
 // Render Nunjucks templates
-gulp.task('nunjucks', function(done) {
+gulp.task('nunjucks', function (done) {
     return gulp
         .src(paths.src.templates + '/*.njk')
         // If you need subfolders too
@@ -35,9 +35,9 @@ gulp.task('nunjucks', function(done) {
         //     '!' + paths.src.templates + '/layouts/*.njk',
         //     '!' + paths.src.templates + '/partials/*.njk'
         // ])
-        .pipe(data(gulpif(config.env === 'production', {environment: 'production'}, {environment: 'development'})))
-        .pipe(data(function() {
-            return require('./data.json') 
+        .pipe(data(gulpif(config.env === 'production', { environment: 'production' }, { environment: 'development' })))
+        .pipe(data(function () {
+            return require('./data.json')
         }))
         .pipe(nunjucksRender({
             path: paths.src.templates,
@@ -48,11 +48,11 @@ gulp.task('nunjucks', function(done) {
             }
         }))
         .pipe(gulp.dest(gulpif(config.env === 'production', paths.dist.base, paths.temp.base)))
-	done();
+    done();
 });
 
 // Compile SCSS
-gulp.task('compile:scss', function(done) {
+gulp.task('compile:scss', function (done) {
     return gulp
         .src(paths.src.scss + '/theme.scss')
         .pipe(wait(500))
@@ -69,9 +69,9 @@ gulp.task('compile:scss', function(done) {
         }))
     done();
 });
-  
+
 // Minify CSS
-gulp.task('minify:css', function(done) {
+gulp.task('minify:css', function (done) {
     return gulp
         .src(paths.dist.css + '/theme.css')
         .pipe(cleanCss())
@@ -83,9 +83,9 @@ gulp.task('minify:css', function(done) {
 });
 
 // Concat JS core files
-gulp.task('concat:js-core', function(done) {
-	return gulp
-		.src([
+gulp.task('concat:js-core', function (done) {
+    return gulp
+        .src([
             paths.base.node + '/aos/dist/aos.js',
             paths.base.node + '/fetch-inject/dist/fetch-inject.min.js',
             paths.base.node + '/bootstrap/dist/js/bootstrap.bundle.min.js'
@@ -95,7 +95,7 @@ gulp.task('concat:js-core', function(done) {
         .pipe(concat('theme.core.js'))
         .pipe(gulpif(config.env === 'development', sourcemaps.write('.')))
         .pipe(gulp.dest(gulpif(config.env === 'production', paths.dist.js, paths.temp.js)))
-	done();
+    done();
 });
 
 // Compile JS file
@@ -112,9 +112,9 @@ gulp.task('compile:js', function (done) {
         }))
     done();
 });
-  
+
 // Minify JS core files
-gulp.task('minify:js-core', function(done) {
+gulp.task('minify:js-core', function (done) {
     return gulp
         .src(paths.dist.js + '/theme.core.js')
         .pipe(plumber())
@@ -127,7 +127,7 @@ gulp.task('minify:js-core', function(done) {
 });
 
 // Minify JS files
-gulp.task('minify:js', function(done) {
+gulp.task('minify:js', function (done) {
     return gulp
         .src(paths.dist.js + '/theme.js')
         .pipe(plumber())
@@ -140,15 +140,15 @@ gulp.task('minify:js', function(done) {
 });
 
 // Copy images
-gulp.task('copy:images', function(done) {
-	return gulp
+gulp.task('copy:images', function (done) {
+    return gulp
         .src(paths.src.images + '/**/*')
         .pipe(gulp.dest(gulpif(config.env === 'production', paths.dist.images, paths.temp.images)))
-	done();
+    done();
 });
 
 // Copy plugins
-gulp.task('copy:plugins', function(done) {
+gulp.task('copy:plugins', function (done) {
     return gulp
         .src([
             paths.base.node + '/swiper*/**/*',
@@ -167,16 +167,16 @@ gulp.task('copy:plugins', function(done) {
 });
 
 // Minify HTML files
-gulp.task('minify:html', function(done) {
+gulp.task('minify:html', function (done) {
     return gulp
         .src(paths.dist.base + '/*.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest(paths.dist.base))
-	done();
+    done();
 });
 
 // Delete all target directory
-gulp.task('delete:all', function(done) {
+gulp.task('delete:all', function (done) {
     return del([
         config.env === 'production' ? paths.dist.base : paths.temp.base
     ]);
@@ -184,7 +184,7 @@ gulp.task('delete:all', function(done) {
 });
 
 // Delete css directory
-gulp.task('delete:css', function(done) {
+gulp.task('delete:css', function (done) {
     return del([
         config.env === 'production' ? paths.dist.css + '/**/*.css' : paths.temp.css + '/**/*.css'
     ]);
@@ -192,7 +192,7 @@ gulp.task('delete:css', function(done) {
 });
 
 // Delete js directory
-gulp.task('delete:js', function(done) {
+gulp.task('delete:js', function (done) {
     return del([
         config.env === 'production' ? paths.dist.js + '/**/*.js' : paths.temp.js + '/**/*.js'
     ]);
@@ -200,7 +200,7 @@ gulp.task('delete:js', function(done) {
 });
 
 // Delete plugins directory
-gulp.task('delete:plugins', function(done) {
+gulp.task('delete:plugins', function (done) {
     return del([
         config.env === 'production' ? paths.dist.vendor : paths.temp.vendor
     ]);
@@ -208,12 +208,12 @@ gulp.task('delete:plugins', function(done) {
 });
 
 // Render Nunjucks templates for Documentation
-gulp.task('nunjucks:docs', function(done) {
+gulp.task('nunjucks:docs', function (done) {
     return gulp
         .src(paths.src.docs + '/*.njk')
-        .pipe(data(gulpif(config.env === 'production', {environment: 'production'}, {environment: 'development'})))
-        .pipe(data(function() {
-            return require('./data.json') 
+        .pipe(data(gulpif(config.env === 'production', { environment: 'production' }, { environment: 'development' })))
+        .pipe(data(function () {
+            return require('./data.json')
         }))
         .pipe(nunjucksRender({
             path: paths.src.docs,
@@ -224,11 +224,11 @@ gulp.task('nunjucks:docs', function(done) {
             }
         }))
         .pipe(gulp.dest(gulpif(config.env === 'production', paths.dist.docs, paths.temp.docs)))
-	done();
+    done();
 });
 
 // Compile SCSS for Documentation
-gulp.task('compile:docs:scss', function(done) {
+gulp.task('compile:docs:scss', function (done) {
     return gulp
         .src(paths.src.scss + '/docs.scss')
         .pipe(wait(500))
@@ -242,9 +242,9 @@ gulp.task('compile:docs:scss', function(done) {
         .pipe(gulp.dest(gulpif(config.env === 'production', paths.dist.docs + "/assets/css", paths.temp.docs + "/assets/css")))
     done();
 });
-  
+
 // Minify CSS for Documentation
-gulp.task('minify:docs:css', function(done) {
+gulp.task('minify:docs:css', function (done) {
     return gulp
         .src(paths.dist.docs + "/assets/css/docs.css")
         .pipe(cleanCss())
@@ -257,21 +257,21 @@ gulp.task('minify:docs:css', function(done) {
 
 // BrowserSync init
 function browserSyncInit(done) {
-	browserSync.init({
+    browserSync.init({
         host: 'localhost',
         port: 3000,
         proxy: false,
-		server: {
+        server: {
             baseDir: paths.base.dir
         }
-	});
-	done();
+    });
+    done();
 }
 
 // BrowserSync callback
 function browserSyncReload(done) {
-	browserSync.reload();
-	done();
+    browserSync.reload();
+    done();
 }
 
 // Watch for changes
@@ -279,13 +279,13 @@ function watch() {
     gulp.watch(paths.src.templates + '/**/*.njk', gulp.series('nunjucks'));
     gulp.watch(paths.src.docs + '/**/*.njk', gulp.series('nunjucks'));
     gulp.watch(paths.src.scss + '/**/*.scss', gulp.series('compile:scss'));
-    gulp.watch(paths.src.js + '/**/*.js' , gulp.series('compile:js'));
+    gulp.watch(paths.src.js + '/**/*.js', gulp.series('compile:js'));
     gulp.watch(paths.src.images + '/**/*', gulp.series('copy:images'));
     gulp.watch(paths.temp.base + '/**/*.html', browserSyncReload);
 };
 
 // Error handling
-function handleError (error) {
+function handleError(error) {
     console.log(error.toString());
     this.emit('end');
 }
@@ -300,8 +300,8 @@ var config = extend({
 gulp.task('browserSync', gulp.series(browserSyncInit, watch));
 gulp.task('css', gulp.series('compile:scss', 'minify:css', 'compile:docs:scss', 'minify:docs:css'));
 gulp.task('js', gulp.series('concat:js-core', 'compile:js', 'minify:js-core', 'minify:js'));
-gulp.task('set-dev-node-env', async function () {return process.env.NODE_ENV = config.env = 'development';});
-gulp.task('set-prod-node-env', async function () {return process.env.NODE_ENV = config.env = 'production';});
+gulp.task('set-dev-node-env', async function () { return process.env.NODE_ENV = config.env = 'development'; });
+gulp.task('set-prod-node-env', async function () { return process.env.NODE_ENV = config.env = 'production'; });
 
 
 // Default mode with watch

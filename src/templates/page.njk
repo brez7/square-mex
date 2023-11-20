@@ -1,0 +1,25 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<section class="mt-10 pt-6 pb-4 pt-lg7 pb-lg-5 bg-layer-light-top-80-left-50">
+  <div class="container">
+    <div class="row">
+      <div class="col position-relative">
+        <h1 class="display-4">{{ data[0].title }}</h1>
+        <p>{{ data[0].description | safe }}</p>
+      </div>
+    </div>
+    <div class="row px-3">
+      {% for image in data[0].images %}
+        <div class="col-md-6 col-lg-4 px-3 mb-5 position-relative" data-aos="fade-right">
+          <picture>
+            <source srcset="{{ image | replace('.jpg', '.webp') }}" type="image/webp">
+            <img src="{{ image }}" alt="photo" class="img-fluid w-100 rounded shadow lift">
+          </picture>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

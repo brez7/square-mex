@@ -1,0 +1,32 @@
+{% extends "layouts/_layout.njk" %}
+{% set title = "Images" %}
+{% set logoColor = "#ffffff" %}
+{% set navbarDark = true %}
+{% set navbarFull = true %}
+
+
+{% block content %}
+
+
+<div class="container custom-margin-top">
+  <div class="row">
+    {% for image in images %}
+      <div class="col-md-3 mb-4">
+        <a class="linked" href="{{ image.link }}">
+          <div class="image-container">
+            <img class="img-fluid" src="{{ image.src }}" alt="{{ image.alt }}" data-aos="fade-down" data-aos-delay="100" />
+          </div>
+          <p class="image-caption" data-aos="fade-left" data-aos-delay="100">{{ image.caption }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+
+{% endblock content %}
+
+
+   

@@ -4,53 +4,27 @@
 {% set navbarFull = true %}
 
 {% block content %}
-<section class="pt-11 mb-6 pt-lg-12 mb-lg-7 bg-layer-light-top-50-left-100" id="content">
-    <div class="container">
-        <div class="row">
-            <div class="col position-relative">
-                <h1 class="mb-n3">Send us a message</h1>
-            </div>
+<div class="container" style="margin-top:200px;">
+    <form action="" id="contactForm">
+
+        <div class="inputBox">
+            <input type="text" id="name" placeholder="Your name...." />
         </div>
-        <div class="row">
-            <div class="col pt-5 position-relative">
-                <div class="bg-white shadow-lg">
-                    <div class="row g-0">
-                        <div class="col-lg-7 p-4 p-lg-6">
-                            <form id="contactForm">
-                                <div class="inputBox">
-                                    <input type="text" id="name" placeholder="Name" />
-                                </div>
 
-                                <div class="inputBox">
-                                    <input type="email" id="emailid" placeholder="Email" />
-                                </div>
+        <div class="inputBox">
+            <input type="email" id="emailid" placeholder="Your Email....." />
+        </div>ss
 
-                                <div class="inputBox">
-                                    <textarea id="msgContent" cols="30" rows="10" placeholder="Message"></textarea>
-                                </div>
-
-                                <div class="inputBox">
-                                    <button type="submit">Submit</button>
-                                </div>
-
-                            </form>
-                        </div>
-                        <!--col-lg-7 p-4 p-lg-6-->
-                        <div class="col-lg-5 position-relative bg-white z-index-1">
-       
-                        </div>
-                        <!--row-->
-                    </div>
-                    <!--row g-0-->
-                </div>
-                <!--bg-white shadow-lg-->
-            </div>
-            <!--col pt-5 position-relative-->
+        <div class="inputBox">
+            <textarea id="msgContent" cols="30" rows="10" placeholder="Message"></textarea>
         </div>
-        <!--row-->
-    </div>
-</section>
 
+        <div class="inputBox">
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+</div>
 
 <script type="module">
 
