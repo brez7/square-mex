@@ -83,7 +83,6 @@ h1 {
   border-radius: 20px; /* Adjust the radius value as needed */
 }
 
-<<<<<<< HEAD
 .body {
        background-image: url('assets/images/photos/breakfast/breakfast-main.webp');
 }
@@ -229,54 +228,6 @@ h1 {
 /* Large screens (e.g., desktops) */
 @media (min-width: 1024px) {
   .inputBox {
-    width: 100%;
+    width: 100%;  
   }
 }
-
-
-@mixin make-widths-container($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
-    @each $breakpoint, $container-max-width in $max-widths {
-        @include media-breakpoint-up($breakpoint, $breakpoints) {
-            @media (min-width: 1600px) {
-                width: #{$container-max-width - $grid-gutter-width};
-            }
-        }
-    }
-}
-
-@mixin make-widths-outside-container($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
-    @each $breakpoint, $container-max-width in $max-widths {
-        @include media-breakpoint-up($breakpoint, $breakpoints) {
-            @media (min-width: 1600px) {
-                width: calc(100% + 50vw - ($container-max-width / 2) + ($grid-gutter-width / 2));
-            }
-        }
-    }
-}
-
-@mixin make-widths-outside-container-with-edge($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
-    @each $breakpoint, $container-max-width in $max-widths {
-        @include media-breakpoint-up($breakpoint, $breakpoints) {
-            @media (min-width: 1600px) {
-                width: calc(100% + 50vw - ($container-max-width / 2) - $navbar-padding-x);
-            }
-        }
-    }
-}
-
-@mixin make-widths-outside-container-no-gutters($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
-    @each $breakpoint, $container-max-width in $max-widths {
-        @include media-breakpoint-up($breakpoint, $breakpoints) {
-            @media (min-width: 1600px) {
-                width: calc(50vw + #{$container-max-width / 2});
-            }
-        }
-    }
-}
-=======
-// .bg-primary {
-//       background-image: url('assets/images/photos/breakfast/breakfast-main.webp');
-// }
-
- 
->>>>>>> 75d074a2e1c5fc6f4d3a461056fdf76a0fbfe57f
