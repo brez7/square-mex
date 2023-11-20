@@ -120,5 +120,85 @@
 			"alt": "A tasty breakfast",
 			"link": "#"
 		}
+	],
+	"images": [
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "BREAKFAST BURRITOS",
+			"alt": "A tasty breakfast",
+			"link": "menu.html"
+		},
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "BREAKFAST PLATES",
+			"alt": "A tasty breakfast",
+			"link": "#"
+		},
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "BURRITOS",
+			"alt": "A tasty breakfast",
+			"link": "#"
+		},
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "BOWLS",
+			"alt": "A tasty breakfast",
+			"link": "#"
+		},
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "TACOS",
+			"alt": "A tasty breakfast",
+			"link": "#"
+		},
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "TOSTADAS",
+			"alt": "A tasty breakfast",
+			"link": "#"
+		},
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "ENCHILADAS",
+			"alt": "A tasty breakfast",
+			"link": "#"
+		},
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "QUESADILLAS",
+			"alt": "A tasty breakfast",
+			"link": "#"
+		},
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "TORTAS",
+			"alt": "A tasty breakfast",
+			"link": "#"
+		},
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "FAN FAVORITES",
+			"alt": "A tasty breakfast",
+			"link": "#"
+		},
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "DINNER COMBOS",
+			"alt": "A tasty breakfast",
+			"link": "#"
+		},
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "KIDS MENU",
+			"alt": "A tasty breakfast",
+			"link": "#"
+		},
+		{
+			"src": "assets/images/photos/breakfast/breakfast-main.webp",
+			"caption": "SIDES & DRINKS",
+			"alt": "A tasty breakfast",
+			"link": "#"
+		}
 	]
 }
