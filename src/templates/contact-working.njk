@@ -1,0 +1,145 @@
+<!-- contact.njk -->
+{% extends "layouts/_layout.njk" %}
+{% set title = "Contact" %}
+{% set navbarFull = true %}
+
+{% block content %}
+<section class="pt-11 mb-6 pt-lg-12 mb-lg-7 bg-layer-light-top-50-left-100" id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col position-relative">
+                <h1 class="mb-n3">Send us a message</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pt-5 position-relative">
+                <div class="bg-white shadow-lg">
+                    <div class="row g-0">
+                        <div class="col-lg-7 p-4 p-lg-6">
+                            <form id="contactForm">
+                                <div class="inputBox">
+                                    <input type="text" id="name" placeholder="Name"  aria-label="Name"/>
+                                </div>
+                                <div class="inputBox">
+                                    <input type="text" id="phone" placeholder="Phone" />
+                                </div>
+
+                                <div class="inputBox">
+                                    <input type="email" id="emailid" placeholder="Email" />
+                                </div>
+
+                                <div class="inputBox">
+                                    <textarea id="msgContent" cols="30" rows="10" placeholder="Message"></textarea>
+                                </div>
+
+                                <div class="inputBox">
+                                    <button type="submit">Submit</button>
+                                </div>
+
+                            </form>
+                        </div>
+                        <!--col-lg-7 p-4 p-lg-6-->
+                        <div class="col-lg-5 position-relative bg-white z-index-1">
+                            <div data-toggle="map" data-options='{"center": [-119.8631919,36.8121287]}' data-marker
+                                class="w-100 h-100 py-10"></div>
+                        </div>
+                        <!--row-->
+                    </div>
+                    <!--row g-0-->
+                </div>
+                <!--bg-white shadow-lg-->
+            </div>
+            <!--col pt-5 position-relative-->
+        </div>
+        <!--row-->
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDxBBkjzK_OVDZGuTM3qXied6Zii2sV0qM",
+    authDomain: "elpueblo-switch.firebaseapp.com",
+    databaseURL: "https://elpueblo-switch-default-rtdb.firebaseio.com",
+    projectId: "elpueblo-switch",
+    storageBucket: "elpueblo-switch.appspot.com",
+    messagingSenderId: "584570551282",
+    appId: "1:584570551282:web:84aca1ae6f3b52c874096b"
+};
+
+ 
+ 
+    const app = initializeApp(firebaseConfig);
+    const firestore = getFirestore(app);
+
+    document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+        e.preventDefault();
+        var name = getElementVal("name");
+        var emailid = getElementVal("emailid");
+        var msgContent = getElementVal("msgContent");
+        saveMessages(name, emailid, msgContent)
+            .then(() => {
+                // Redirect to a new page after successful submission
+                window.location.href = 'index.html'; // Replace with your desired URL
+            })
+            .catch((error) => {
+                console.error("Error adding document: ", error);
+            });
+        document.getElementById("contactForm").reset();
+    }
+
+    function saveMessages(name, emailid, msgContent){
+        return addDoc(collection(firestore, "messages"), {
+            name: name,
+            emailid: emailid,
+            msgContent: msgContent,
+            timestamp: new Date()  
+        });
+    }
+
+    const getElementVal = (id) => {
+        return document.getElementById(id).value;
+    };
+    </script>
+
+{% endblock content %}
