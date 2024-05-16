@@ -58,7 +58,31 @@ npm run dev
 It will generate a dist folder with minified js, css, html files.
 
 ```
-npm run prod
+npm run production
 ```
+#### Push to Firebase
 
-More information on the website.
+firebase deploy
+
+ 
+
+
+
+
+docker run -p 8080:8080 switch-el-test
+
+
+
+
+
+docker build -t switch-el-test .
+
+docker tag switch-el-test gcr.io/upbeat-button-265722/switch-el:latest
+
+docker push gcr.io/upbeat-button-265722/switch-el:latest
+
+gcloud run deploy switch-el --image gcr.io/upbeat-button-265722/switch-el:latest --platform managed --region us-central1 --allow-unauthenticated
+
+ 
+
+

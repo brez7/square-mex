@@ -218,10 +218,10 @@ var TypedJS = (function() {
         // Inner variables
         var dataOptions = JSON.parse(elem.getAttribute('data-options')),
             options = {
-                startDelay: 1000,
-                typeSpeed: 100,
+                startDelay: 500,
+                typeSpeed: 50,
                 backSpeed: 50,
-                backDelay: 1000,
+                backDelay: 500,
                 loop: true
             },
             mergedOptions = mergeObjects(options, dataOptions);

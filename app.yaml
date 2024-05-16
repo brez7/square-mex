@@ -1,0 +1,12 @@
+runtime: nodejs22  # Adjust runtime version based on your Node.js version
+env: standard
+
+service: elpub10  # Replace with your desired service name
+
+handlers:
+  - url: /  # Matches all root paths
+    script: dist/index.html  # Serve index.html from the dist folder
+
+manual_scaling:
+  instances: 1  # Set the initial number of instances
+
