@@ -60,9 +60,8 @@ It will generate a dist folder with minified js, css, html files.
 ```
 npm run production
 ```
-#### Push to Firebase
-
-firebase deploy
+ 
+ 
 
  
 
