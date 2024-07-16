@@ -1,0 +1,17 @@
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+            <br><br><h1>Eat <span class="fwx-lighter" data-typed data-options='{"strings": ["Fresh", "Tasty", "Genuine"]}'></span>Mexican Food</h1>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var options = {
+                strings: ["Fresh", "Tasty", "Genuine"],
+                typeSpeed: 50,
+                backSpeed: 50,
+                loop: true
+            };
+
+            var typed = new Typed("#typed", options);
+        });
+    </script>
